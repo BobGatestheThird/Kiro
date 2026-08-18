@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "microsoft-learn": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "disabled": false,
+      "autoApprove": [
+        "microsoft_docs_search"
+      ]
+    },
+    "infoblox-nios": {
+      "command": "wsl",
+      "args": [
+        "bash",
+        "-lc",
+        "cd /mnt/c/path/to/your/workspace/infoblox-mcp-server && node dist/index.js"
+      ],
+      "env": {
+        "INFOBLOX_HOST": "your-infoblox-grid.example.com",
+        "INFOBLOX_USER": "admin",
+        "INFOBLOX_PASSWORD": "your-password-here",
+        "INFOBLOX_WAPI_VERSION": "2.12",
+        "INFOBLOX_VERIFY_SSL": "false"
+      },
+      "disabled": true,
+      "autoApprove": []
+    },
+    "infra-tools": {
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "C:\\scripts\\mcp-server\\MCPServer.ps1"
+      ],
+      "disabled": true,
+      "autoApprove": []
+    }
+  }
+}
